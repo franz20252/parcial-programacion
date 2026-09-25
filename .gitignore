@@ -1,0 +1,34 @@
+# Build output
+bin/
+obj/
+
+# Visual Studio and VS Code user files
+.vs/
+.vscode/
+*.user
+*.userosscache
+*.suo
+*.rsuser
+
+# Test results and coverage
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# NuGet and generated assets
+packages/
+*.nupkg
+*.snupkg
+
+# Local settings and secrets
+.env
+.env.*
+!.env.example
+appsettings.Local.json
+appsettings.*.Local.json
+secrets.json
+
+# Operating system files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,192 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  background: #f5f7f2;
+  color: #23302a;
+}
+
+.pet-page {
+  max-width: 1040px;
+  margin: 3.5rem auto;
+}
+
+.pet-heading {
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  margin-bottom: .5rem;
+  color: #4c7865;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.pet-heading h1 {
+  margin-bottom: .5rem;
+  color: #193b32;
+  font-family: Georgia, serif;
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+}
+
+.pet-heading .lead {
+  max-width: 560px;
+  color: #68756e;
+}
+
+.pet-panel,
+.pet-list {
+  border: 1px solid #dce5dc;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .82);
+  padding: 1.75rem;
+  box-shadow: 0 12px 30px rgba(31, 61, 45, .06);
+}
+
+.pet-panel h2,
+.pet-list h2 {
+  color: #193b32;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.form-label {
+  color: #405249;
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.form-control,
+.form-select {
+  border-color: #d5e0d7;
+  padding: .75rem .85rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #4c7865;
+  box-shadow: 0 0 0 .2rem rgba(76, 120, 101, .15);
+}
+
+.btn-primary {
+  border-color: #315f4d;
+  background: #315f4d;
+  padding: .75rem 1rem;
+}
+
+.btn-primary:hover {
+  border-color: #234838;
+  background: #234838;
+}
+
+.pet-count {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border-radius: 50%;
+  background: #e5f0e7;
+  color: #315f4d;
+  font-weight: 700;
+}
+
+.empty-state {
+  border: 1px dashed #c8d8cb;
+  padding: 3rem 1rem;
+  color: #829087;
+  text-align: center;
+}
+
+.empty-state p {
+  margin: .75rem 0 0;
+}
+
+.empty-icon {
+  display: inline-grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border-radius: 50%;
+  background: #eef5ee;
+  color: #4c7865;
+  font-size: 1.5rem;
+}
+
+.pet-items {
+  display: grid;
+  gap: .75rem;
+}
+
+.pet-item {
+  display: flex;
+  align-items: center;
+  gap: .85rem;
+  border-top: 1px solid #e8eee9;
+  padding: 1rem 0;
+}
+
+.pet-avatar {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: 0 0 2.75rem;
+  place-items: center;
+  border-radius: 50%;
+  background: #e4c38f;
+  color: #49391f;
+  font-family: Georgia, serif;
+  font-size: 1.25rem;
+}
+
+.pet-item h3 {
+  margin: 0;
+  color: #193b32;
+  font-size: 1rem;
+}
+
+.pet-item p {
+  margin: .15rem 0 0;
+  color: #78857e;
+  font-size: .88rem;
+}
+
+.pet-item strong {
+  margin-left: auto;
+  color: #4c7865;
+  font-size: .9rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .pet-page {
+    margin: 2rem auto;
+  }
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
