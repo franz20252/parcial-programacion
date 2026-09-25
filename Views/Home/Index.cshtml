@@ -6,7 +6,7 @@
 
 <div class="pet-page">
     <div class="pet-heading">
-        <p class="eyebrow">Registro temporal</p>
+        <p class="eyebrow">Registro de mascotas</p>
         <h1>Mis mascotas</h1>
         <p class="lead">Agrega los datos de tus mascotas y consúltalos en esta misma página.</p>
     </div>
@@ -20,7 +20,7 @@
         <div class="col-lg-5">
             <section class="pet-panel">
                 <h2>Registrar mascota</h2>
-                <p class="text-muted">Los datos se guardan solo mientras la aplicación esté ejecutándose.</p>
+                <p class="text-muted">Los datos se guardan en una base de datos SQLite local.</p>
                 <form asp-action="RegistrarMascota" method="post">
                     <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 

@@ -1,28 +1,46 @@
 using System.Diagnostics;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
+using parcial_programacion.Data;
 using parcial_programacion.Models;
 
 namespace parcial_programacion.Controllers;
 
 public class HomeController : Controller
 {
-    private static readonly List<Mascota> Mascotas = new();
+    private readonly MascotaDbContext _context;
 
-    public IActionResult Index()
+    public HomeController(MascotaDbContext context)
     {
-        return View(Mascotas);
+        _context = context;
+    }
+
+    public async Task<IActionResult> Index()
+    {
+        var mascotas = await _context.Mascotas
+            .AsNoTracking()
+            .OrderBy(mascota => mascota.Id)
+            .ToListAsync();
+
+        return View(mascotas);
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult RegistrarMascota(Mascota mascota)
+    public async Task<IActionResult> RegistrarMascota(Mascota mascota)
     {
         if (!ModelState.IsValid)
         {
-            return View("Index", Mascotas);
+            var mascotas = await _context.Mascotas
+                .AsNoTracking()
+                .OrderBy(registro => registro.Id)
+                .ToListAsync();
+
+            return View("Index", mascotas);
         }
 
-        Mascotas.Add(mascota);
+        _context.Mascotas.Add(mascota);
+        await _context.SaveChangesAsync();
         TempData["Mensaje"] = $"{mascota.Nombre} fue registrada correctamente.";
         return RedirectToAction(nameof(Index));
     }

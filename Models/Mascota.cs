@@ -4,6 +4,8 @@ namespace parcial_programacion.Models;
 
 public class Mascota
 {
+    public int Id { get; set; }
+
     [Required(ErrorMessage = "Escribe el nombre de la mascota.")]
     public string Nombre { get; set; } = string.Empty;
 
