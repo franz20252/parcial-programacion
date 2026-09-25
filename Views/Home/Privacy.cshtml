@@ -1,6 +1,38 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Política de Privacidad y Mapa";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<div class="container mt-4">
+    <h1>@ViewData["Title"]</h1>
+    <p>Utilice esta página para detallar la política de privacidad de su sitio web y probar el mapa.</p>
+
+    <!-- Contenedor del Mapa -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <section class="card shadow-sm p-4">
+                <h3 class="mb-3">Ubicación de Prueba (Google Maps)</h3>
+                <div id="map" style="height: 400px; width: 100%; border-radius: 8px;"></div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- Script de Google Maps integrado directamente sin secciones -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBviLMMf4ZFDJhVMaIrtir4NLuG368_1c0&callback=initMap" async defer></script>
+
+<script>
+    function initMap() {
+        const ubicacionInicial = { lat: -12.2015, lng: -76.9348 };
+
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 14,
+            center: ubicacionInicial,
+        });
+
+        const marker = new google.maps.Marker({
+            position: ubicacionInicial,
+            map: map,
+            title: "Ubicación central"
+        });
+    }
+</script>
